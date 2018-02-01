@@ -1,0 +1,14 @@
+{
+  "name": "typescript-react",
+  "version": "1.0.0",
+  "description": "Website using react and typescript. Solely for practising using them.",
+  "main": "index.js",
+  "author": "Fredrik A. Madsen-Malmo <mail.fredrikaugust@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.0.36",
+    "@types/react-dom": "^16.0.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
