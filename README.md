@@ -14,6 +14,7 @@ website](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)._
 - 4. Add initial React component
 - 5. Add index.tsx which mounts the node
 - 6. Add index.html with ref. to dev. version of react[-dom] and bundle.js
+- 7. Setup webpack config
 
 ## License
 
