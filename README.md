@@ -1,6 +1,6 @@
 # Typescript and react practise program
 
-This is just a simple progrma to teach myself the basics of using typescript and
+This is just a simple project to teach myself the basics of using typescript and
 react.
 
 ## Rough step-by-step guide
