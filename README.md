@@ -6,55 +6,14 @@ react.
 ## Rough step-by-step guide
 
 _Mostly just rewritten content from [this
-website](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html).
+website](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)._
 
-### 1. Install deps
-```bash
-yarn add react react-dom @types/react @types/react-dom
-```
-
-### 2. Install dev tools
-```bash
-yarn add -D typescript awesome-typescript-loader source-map-loader
-```
-
-### 3. Create `tsconfig`
-```javascript
-{
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es5",
-    "jsx": "react"
-  },
-  "include": [
-    "./src/**/*"
-  ]
-}
-```
-
-### 4. Add initial React component
-```typescript
-import * as React from 'react';
-
-export interface AppProps {
-  compiler: string;
-  framework: string;
-}
-
-export class App extends React.Component<AppProps, {}> {
-  render() {
-    return (
-      <div>
-        <h1>Hello, World.</h1>
-        <p>This website is made with { this.props.framework } and compiled with { this.props.compiler }.</p>
-      </div>
-    );
-  }
-}
-```
+- 1. Install deps
+- 2. Install dev tools
+- 3. Create `tsconfig`
+- 4. Add initial React component
+- 5. Add index.tsx which mounts the node
+- 6. Add index.html with ref. to dev. version of react[-dom] and bundle.js
 
 ## License
 
