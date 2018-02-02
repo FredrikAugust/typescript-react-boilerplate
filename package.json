@@ -12,15 +12,39 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.8",
+    "@types/jest": "^22.1.1",
     "awesome-typescript-loader": "^3.4.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.16.0",
     "eslint-plugin-react": "^7.6.1",
+    "jest": "^22.0.1",
     "source-map-loader": "^0.2.3",
     "tslint": "^5.9.1",
     "typescript": "^2.7.1",
     "webpack": "^3.10.0"
   },
   "scripts": {
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/test-shim.js",
+      "./test/test-setup.js"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "./test/test-preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.test.(ts|tsx|js)"
+    ]
   }
 }

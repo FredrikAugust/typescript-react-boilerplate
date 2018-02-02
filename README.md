@@ -16,6 +16,8 @@ website](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)._
 - 6. Add index.html with ref. to dev. version of react[-dom] and bundle.js
 - 7. Setup webpack config
 - 8. Run `webpack` to compile all the files, and open `index.html` in the browser
+- 9. Add testing shim, setup and transpiler [from here](https://medium.com/@mateuszsokola/configuring-react-16-jest-enzyme-typescript-7122e1a1e6e8)
+- 10. Test
 
 ## License
 
