@@ -26,7 +26,8 @@
     "webpack": "^3.10.0"
   },
   "scripts": {
-    "start": "webpack --watch",
+    "start": "webpack",
+    "start:watch": "webpack --watch",
     "test": "jest",
     "test:watch": "jest --watch"
   },
