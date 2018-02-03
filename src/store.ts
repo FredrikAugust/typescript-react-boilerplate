@@ -1,22 +1,19 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { routerReducer, RouterState, routerMiddleware } from 'react-router-redux';
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory, History } from 'history';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 
 import {
   default as defaultReducer,
   State as DefaultState
 } from './reducers/reducer';
 
-import { History } from 'history';
 import { Middleware } from 'redux';
 
 /**
  * This is the root state (the state of all states) in the application.
  */
 export type RootState = {
-  routing: RouterState;
   defaultState: DefaultState
 }
 
@@ -24,9 +21,9 @@ export type RootState = {
  * The root reducer taking care of all reductions.
  */
 const rootReducer = combineReducers<RootState>({
-  routing: routerReducer,
   defaultReducer
 });
+
 
 /**
  * This is used when restarting the application. This will
@@ -35,19 +32,22 @@ const rootReducer = combineReducers<RootState>({
 const recoverState = (): RootState => ({} as RootState);
 
 /**
- * Setup middleware object. This will be put in the store so redux
- * can manage the browser history state.
+ * @export
  */
-export const history: History = createHistory();
-const historyMiddleware: Middleware = routerMiddleware(history);
+export const history: History = createBrowserHistory();
 
 /**
  * The store object which is what is keeping the state of the application.
  */
 export const store = createStore(
-  rootReducer,
+  connectRouter(history)(rootReducer),
   recoverState(),
-  applyMiddleware(thunk, historyMiddleware)
+  compose(
+    applyMiddleware(
+      thunk,
+      routerMiddleware(history)
+    )
+  )
 );
 
 /**
