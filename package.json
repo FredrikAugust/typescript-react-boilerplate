@@ -32,11 +32,13 @@
     "source-map-loader": "^0.2.3",
     "tslint": "^5.9.1",
     "typescript": "^2.7.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "start": "webpack",
-    "start:watch": "webpack --watch",
+    "start": "webpack-dev-server",
+    "compile": "webpack --watch",
+    "compile:watch": "webpack --watch",
     "test": "jest",
     "test:watch": "jest --watch"
   },

@@ -1,8 +1,11 @@
+const webpack = require('webpack');
+
 module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: __dirname + '/dist',
+    publicPath: '/dist',
   },
 
   // Enable sourcemap; debug webpack's output
@@ -28,5 +31,18 @@ module.exports = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
-  },  
+  },
+
+  // Settings for the dev-server; we want it to automatically update our app when we
+  // make changes
+  devServer: {
+    port: 3000,
+    hot: true
+  },
+
+  // These plugins are required for the hot-code-reload function
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
