@@ -15,7 +15,7 @@ interface FrontpageProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const FrontpageComponent = ({ testValue, onChange }: FrontpageProps) => (
+export const FrontpageComponent = ({ testValue, onChange }: FrontpageProps) => (
   <div>
     <h1>Hello, World!</h1>
     <p>{ testValue }</p>

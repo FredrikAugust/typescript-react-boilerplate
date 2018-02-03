@@ -44,7 +44,6 @@ export default function reducer(state: State = initialState, action: Action): St
 
   switch (action.type) {
     case ActionCreators.TestAction.type:
-      console.log(`Value changed from "${state.testValue}" to "${action.payload}"`);
       partialState = { testValue: action.payload };
       break;
   }
