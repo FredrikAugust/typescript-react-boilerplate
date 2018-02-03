@@ -8,11 +8,11 @@ describe('App', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <App framework="TestFramework" compiler="Typescript" />
+      <App />
     );
   });
 
-  it('has correct props', () => {
-    expect(wrapper.contains(<h1>OK.</h1>)).toBe(true);
+  it('renders app', () => {
+    expect(wrapper.contains(<h1>Hello, World!</h1>)).toBe(true);
   });
 });

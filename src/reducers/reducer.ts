@@ -14,7 +14,7 @@ export const ActionCreators = {
 export type Action = typeof ActionCreators[keyof typeof ActionCreators];
 
 /**
- * The root state of the application.
+ * The default state of the application.
  */
 export type State = {
   readonly testValue: string;
@@ -28,6 +28,7 @@ export type State = {
 export const initialState: State = {
   testValue: ''
 }
+
 /**
  * The reducer of all reducers. Will return a new state that is changed to reflect the 
  * wishes of the `Action` passed in.
@@ -37,7 +38,7 @@ export const initialState: State = {
  * @param {Action} action 
  * @returns {State} Returns a **new** updated state. The state is never modified.
  */
-export default function rootReducer(state: State = initialState, action: Action): State {
+export default function reducer(state: State = initialState, action: Action): State {
   // This can hold some of the items in state, but doesn't require all
   let partialState: Partial<State> | undefined;
 
