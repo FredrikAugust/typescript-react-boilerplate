@@ -1,23 +1,9 @@
-# Typescript and react practise program
+# Typescript+React+(React-(Router-))Redux(-Thunk)+Webpack+Enzyme(ran with Jest) boilerplate
 
-This is just a simple project to teach myself the basics of using typescript and
-react.
+This is my template for developing bleeding (much like my eyes when peeking in `package.json`) edge
+reactive web apps.
 
-## Rough step-by-step guide
-
-_Mostly just rewritten content from [this
-website](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)._
-
-- 1. Install deps
-- 2. Install dev tools
-- 3. Create `tsconfig`
-- 4. Add initial React component
-- 5. Add index.tsx which mounts the node
-- 6. Add index.html with ref. to dev. version of react[-dom] and bundle.js
-- 7. Setup webpack config
-- 8. Run `webpack` to compile all the files, and open `index.html` in the browser
-- 9. Add testing shim, setup and transpiler [from here](https://medium.com/@mateuszsokola/configuring-react-16-jest-enzyme-typescript-7122e1a1e6e8)
-- 10. Test
+Feel free to use it and create PRs/issues if you spot any flaws!
 
 ## License
 
