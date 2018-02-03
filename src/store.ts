@@ -32,6 +32,9 @@ const rootReducer = combineReducers<RootState>({
 const recoverState = (): RootState => ({} as RootState);
 
 /**
+ * Keeps track of where you've been, so we can use back-buttons on your mouse
+ * to navigate the website (amongst other things).
+ * 
  * @export
  */
 export const history: History = createBrowserHistory();

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { store, history } from './store';
 
 import { App } from './components/App';
 
-import { store, history } from './store';
 
 ReactDOM.render(
   <Provider store={store}>
