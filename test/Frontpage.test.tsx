@@ -2,16 +2,25 @@ import * as React from 'react';
 
 import { Frontpage } from '../src/components/Frontpage';
 
-import { Link } from 'react-router-dom';
+import { store } from '../src/store';
 
-import { shallow, ShallowWrapper } from 'enzyme';
+import { Link } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import { MemoryRouter } from 'react-router';
+
+import { mount, ReactWrapper } from 'enzyme';
 
 describe('Frontpage', () => {
-  let wrapper: ShallowWrapper;
+  let wrapper: ReactWrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <Frontpage />
+    wrapper = mount(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Frontpage />
+        </MemoryRouter>
+      </Provider>
     );
   });
 

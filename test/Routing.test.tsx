@@ -45,7 +45,7 @@ describe('Routing', () => {
     });
 
     it("doesn't mount Frontpage", () => {
-      expect(wrapper.containsMatchingElement(<Frontpage />)).toBe(false);
+      expect(wrapper.containsMatchingElement(<About />)).toBe(true);
     });
   })
 });

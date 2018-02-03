@@ -1,7 +1,7 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createBrowserHistory, History } from 'history';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { connectRouter, routerMiddleware, RouterState } from 'connected-react-router';
 
 import {
   default as defaultReducer,
@@ -9,18 +9,20 @@ import {
 } from './reducers/reducer';
 
 import { Middleware } from 'redux';
+import { Reducer } from 'redux';
 
 /**
  * This is the root state (the state of all states) in the application.
  */
 export type RootState = {
-  defaultState: DefaultState
+  defaultReducer: DefaultState;
+  router: RouterState
 }
 
 /**
  * The root reducer taking care of all reductions.
  */
-const rootReducer = combineReducers<RootState>({
+const rootReducer: Reducer<RootState> = combineReducers<RootState>({
   defaultReducer
 });
 
