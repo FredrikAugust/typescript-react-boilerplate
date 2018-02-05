@@ -5,13 +5,15 @@ import { ActionCreator } from '../actions/action-creator';
  * the same as the parameter.
  */
 export const ActionCreators = {
-  TestAction: new ActionCreator<'TestAction', string>('TestAction')
+  TestAction: new ActionCreator<'TestAction', string>('TestAction'),
 };
 
 /**
  * A type containing all of the possible actions that can come from `ActionCreator`.
+ * Adding the Partial<...> so it won't complain about missing `create` function.
  */
-export type Action = typeof ActionCreators[keyof typeof ActionCreators];
+export type Action = Partial<typeof ActionCreators[keyof typeof ActionCreators]>;
+
 
 /**
  * The default state of the application.
