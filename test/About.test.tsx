@@ -16,7 +16,7 @@ describe('About', () => {
   });
 
   it('renders the heading', () => {
-    expect(wrapper.contains(<h1>Welcome to the about page!</h1>)).toBe(true);
+    expect(wrapper.contains("Welcome to the about page!")).toBe(true);
   })
 
   it('renders the link to about page', () => {

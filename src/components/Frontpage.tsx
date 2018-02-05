@@ -10,11 +10,9 @@ import { ReactEventHandler } from 'react';
 import { ActionCreator } from '../actions/action-creator';
 import { RootState } from '../store';
 
-
-/**
- * material-ui
- */
 import Typography from 'material-ui/Typography';
+import Input from 'material-ui/Input';
+import List, { ListItem } from 'material-ui/List';
 
 interface FrontpageProps {
   testValue: string;
@@ -29,19 +27,20 @@ export const FrontpageComponent = ({ testValue, onChange }: FrontpageProps) => (
     <Typography type='body1'>
       { testValue }
     </Typography>
-    {/* TODO: Change to TextInput from MUI */}
-    <input value={ testValue } onChange={ onChange } />
-    <ul>
-      <li>
-        <Link to='/about'>About</Link>
-      </li>
-    </ul>
+    <Input id="testValue" value={ testValue } onChange={ onChange } />
+    <List>
+      <ListItem>
+        <Typography type='body1'>
+          <Link to='/about'>About</Link>
+        </Typography>
+      </ListItem>
+    </List>
   </div>
 );
 
 export const Frontpage = connect(
-  (state: any) => ({
-    testValue: state.defaultReducer.testValue
+  ({ defaultReducer }: RootState) => ({
+    testValue: defaultReducer.testValue
   }),
   (dispatch: Dispatch<State>) => ({
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => dispatch(ActionCreators.TestAction.create(e.target.value))

@@ -2,14 +2,20 @@ import * as React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import Typography from 'material-ui/Typography';
+import List, { ListItem } from 'material-ui/List';
+
 export const About = () => (
   <div>
-    {/* TODO: Change to Typography from MUI */}
-    <h1>Welcome to the about page!</h1>
-    <ul>
-      <li>
-        <Link to='/'>Home</Link>
-      </li>
-    </ul>
+    <Typography type='headline'>
+      Welcome to the about page!
+    </Typography>
+    <List>
+      <ListItem>
+        <Typography type='body1'>
+          <Link to='/'>Home</Link>
+        </Typography>
+      </ListItem>
+    </List>
   </div>
 );
