@@ -25,7 +25,7 @@ describe('Frontpage', () => {
   });
 
   it('renders the heading', () => {
-    expect(wrapper.contains(<h1>Hello, World!</h1>)).toBe(true);
+    expect(wrapper.contains("Hello, World!")).toBe(true);
   })
 
   it('renders the link to about page', () => {

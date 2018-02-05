@@ -6,10 +6,8 @@ import { About } from '../components/About';
 import { Route, Switch } from 'react-router';
 
 export const Routes = () => (
-  <div>
-    <Switch>
-      <Route exact path='/' component={Frontpage} />
-      <Route path='/about' component={About} />
-    </Switch>
-  </div>
+  <Switch>
+    <Route exact path='/' component={Frontpage} />
+    <Route path='/about' component={About} />
+  </Switch>
 );

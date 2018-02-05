@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -21,6 +22,19 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+      // Handle CSS/SCSS
+      {
+        test: /\.s?css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?sourceMap!sass-loader?sourceMap'
+        })
+      },
+      // Fonts
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=public/fonts/[name].[ext]'
+      }
     ]
   },
 
@@ -43,6 +57,7 @@ module.exports = {
   // These plugins are required for the hot-code-reload function
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('styles.css'),
   ]
 };

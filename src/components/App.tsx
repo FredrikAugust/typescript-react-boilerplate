@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Routes } from "./Routes";
+import { Root } from "./Root";
 
 import { ConnectedRouter } from 'connected-react-router';
 
@@ -14,7 +14,7 @@ export class App extends React.Component<AppProps, {}> {
   render() {
     return (
       <ConnectedRouter history={this.props.history}>
-        <Routes />
+        <Root />
       </ConnectedRouter>
     );
   }

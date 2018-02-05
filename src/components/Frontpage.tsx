@@ -10,6 +10,12 @@ import { ReactEventHandler } from 'react';
 import { ActionCreator } from '../actions/action-creator';
 import { RootState } from '../store';
 
+
+/**
+ * material-ui
+ */
+import Typography from 'material-ui/Typography';
+
 interface FrontpageProps {
   testValue: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -17,8 +23,13 @@ interface FrontpageProps {
 
 export const FrontpageComponent = ({ testValue, onChange }: FrontpageProps) => (
   <div>
-    <h1>Hello, World!</h1>
-    <p>{ testValue }</p>
+    <Typography type='headline'>
+      Hello, World!
+    </Typography>
+    <Typography type='body1'>
+      { testValue }
+    </Typography>
+    {/* TODO: Change to TextInput from MUI */}
     <input value={ testValue } onChange={ onChange } />
     <ul>
       <li>
