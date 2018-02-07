@@ -33,8 +33,8 @@ describe('Frontpage', () => {
   });
 
   describe('input', () => {
-    let input;
-    let paragraph;
+    let input: ReactWrapper;
+    let paragraph: ReactWrapper;
     let frontpageWrapper: ReactWrapper;
     let props: { testValue: string, onChange: jest.Mock };
 

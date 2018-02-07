@@ -18,7 +18,7 @@ describe('defaultReducer', () => {
   });
 
   it("doesn't do anything if invalid action", () => {
-    const action  = { type: 'blabla', payload: 'whatevs' };
+    const action = { type: 'blabla', payload: 'whatevs' };
     // @ts-ignore
     const updatedState: State = reducer(initialState, action);
     expect(updatedState).toEqual(initialState);
