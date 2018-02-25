@@ -1,5 +1,7 @@
 # Typescript + React boilerplate
 
+[![CircleCI](https://circleci.com/gh/FredrikAugust/typescript-react-boilerplate.svg?style=svg)](https://circleci.com/gh/FredrikAugust/typescript-react-boilerplate)
+
 This is my template for developing bleeding (much like my eyes when peeking in `package.json`) edge
 reactive web apps.
 
