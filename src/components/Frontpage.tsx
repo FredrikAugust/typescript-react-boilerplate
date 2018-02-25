@@ -21,16 +21,16 @@ interface FrontpageProps {
 
 export const FrontpageComponent = ({ testValue, onChange }: FrontpageProps) => (
   <div>
-    <Typography type='headline'>
+    <Typography variant='headline'>
       Hello, World!
     </Typography>
-    <Typography type='body1'>
+    <Typography variant='body1'>
       { testValue }
     </Typography>
     <Input id="testValue" value={ testValue } onChange={ onChange } />
     <List>
       <ListItem>
-        <Typography type='body1'>
+        <Typography variant='body1'>
           <Link to='/about'>About</Link>
         </Typography>
       </ListItem>
