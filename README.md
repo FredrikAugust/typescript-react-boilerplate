@@ -1,8 +1,4 @@
-# "Hello, World!" in 2018
-
-> "Hello, World!" in 2018; feat. TS;React;Redux;React-Redux;React-Router-Redux;React-Router;Jest;Enzyme
-
-[![Build Status](https://travis-ci.org/FredrikAugust/typescript-react-boilerplate.svg?branch=master)](https://travis-ci.org/FredrikAugust/typescript-react-boilerplate)
+# Typescript + React boilerplate
 
 This is my template for developing bleeding (much like my eyes when peeking in `package.json`) edge
 reactive web apps.
